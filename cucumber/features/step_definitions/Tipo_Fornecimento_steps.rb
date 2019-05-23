@@ -1,0 +1,1 @@
+require_relative '../pages/tipo_fornecimento.rb'
