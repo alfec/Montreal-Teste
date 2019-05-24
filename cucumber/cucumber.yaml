@@ -1,5 +1,5 @@
 ---
-default: -p html_report -p firefox
+default: -p html_report -p chrome
 ci: -p json_report -p phantomjs
 html_report: --format progress --format html --out=logs/features.html
 json_report: --format progress --format json --out=logs/features.json
