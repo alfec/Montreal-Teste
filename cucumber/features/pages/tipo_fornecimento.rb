@@ -17,7 +17,7 @@ class TipoFornecimento
 		#find_button('Logar').click
 		email = browser.text_field(name: "j_username").set("administrador@montreal.com.br")
 		password = browser.text_field(name: "j_password").set 123
-		enter = browser.button(:value, "Logar").click
+		enter = browser.button(value: "Logar").click
 	end
 
 	def paginaInicial
@@ -36,8 +36,8 @@ class TipoFornecimento
 		#press2= browser.button(:text, "Tipo Fornecimento").click
 		#browser.link(:href, "/conformedata-montreal/documento/index").click
 		#browser.link(:href, "/conformedata-montreal/tipoFornecimento/index").click
-		browser.li(:id,"menuEmpresa").click
-		browser.li(:id, "menuTipoFornecimento").click
+		browser.li(id:"menuEmpresa").click
+		browser.li(id: "menuTipoFornecimento").click
 	end
 
 	def verificaPag
@@ -46,7 +46,7 @@ class TipoFornecimento
 	end
 
 	def encontrarFiltrar
-		browser.link(class: 'collapse-link btn btn-info btn-xs.html').click
+		browser.iframe.button(xpath: "//*[@id='btnFiltrar']").click
 		#encontrar = browser.button(text: "Filtrar").click
 	end
 
@@ -60,17 +60,17 @@ class TipoFornecimento
 	end
 
 	def preencherDescricao(x)
-		preencher = browser.text_field(:id, "descricao").set x
+		preencher = browser.text_field(id: "descricao").set x
 	end
 
 	def preencherFiltrarCnae(cnae)
-		preencher = browser.text_field(:id, "cnae").set cnae
+		preencher = browser.text_field(id: "cnae").set cnae
 	 	#fill_in('cnae', with: "#{cnae}")
 	end
 
 	def clicarPesquisar
 		#find_button('Pesquisar').click
-		browser.button(:text, "Pesquisar").click
+		browser.button(text: "Pesquisar").click
 	end
 
 	def validaFinal
